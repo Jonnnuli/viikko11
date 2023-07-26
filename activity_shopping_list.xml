@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".ShoppingListActivity">
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/rvShoppingList"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_marginBottom="100dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintTop_toTopOf="parent" >
+
+    </androidx.recyclerview.widget.RecyclerView>
+
+    <Button
+        android:id="@+id/buttonAddPurchase"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="16dp"
+        android:onClick="switchToAddPurchase"
+        android:text="Lisää ostos"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/rvShoppingList"
+        app:layout_constraintVertical_bias="0.519" />
+
+    <ImageView
+        android:id="@+id/imageViewTime"
+        android:layout_width="50dp"
+        android:layout_height="50dp"
+        android:layout_marginStart="52dp"
+        android:onClick="sortByCreatedOrder"
+        android:src="@drawable/time"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/buttonAddPurchase"
+        app:layout_constraintTop_toBottomOf="@+id/rvShoppingList" />
+
+    <ImageView
+        android:id="@+id/imageViewAlpha"
+        android:layout_width="50dp"
+        android:layout_height="50dp"
+        android:onClick="sortByAlphabet"
+        android:src="@drawable/ao"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/imageViewTime"
+        app:layout_constraintTop_toBottomOf="@+id/rvShoppingList" />
+</androidx.constraintlayout.widget.ConstraintLayout>
